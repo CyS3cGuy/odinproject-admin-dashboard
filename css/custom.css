@@ -1,0 +1,77 @@
+/** Debug **/
+
+.debug-r {
+    border: 1px solid red;
+}
+
+.debug-p {
+    border: 1px solid purple;
+}
+
+.debug-b {
+    border: 1px solid blue;
+}
+
+.debug-g {
+    border: 1px solid green;
+}
+
+.tmpwidth {
+    width: 30px;
+}
+
+/** Variables **/
+
+
+
+/** Universal **/
+body {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-template:
+    'header'
+    'nav'
+    'content'
+    'footer'
+}
+
+#header {
+    grid-area: header;
+
+    #header-main {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+
+        .col-1 {
+            display: grid;
+            grid-template-columns: 1fr 5fr 1fr; 
+        }
+
+        .col-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+        }
+
+    }
+
+    #header-overlay {
+        display: none;
+    }
+}
+
+#nav {
+    grid-area: nav;
+}
+
+#content {
+    grid-area: content;
+}
+
+#footer {
+    grid-area: footer;
+}
+
+#sidebar {
+    grid-area: sidebar;
+    display: none;
+}

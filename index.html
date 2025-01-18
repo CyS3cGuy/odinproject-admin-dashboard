@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,277 @@
     <link rel="stylesheet" href="./css/custom.css">
     <title>Admin Dashboard</title>
 </head>
+
 <body>
-    
+    <div id="header">
+        <div id="header-main">
+            <div class="col-1">
+                <div class="menu-icon">&#x2630;</div>
+                <img src="./images/svg/logo.svg" alt="Logo" class="tmpwidth">
+                <img src="./images/svg/search.svg" alt="Search" class="tmpwidth">
+            </div>
+
+            <div class="col-2">
+                <img src="./images/svg/notification.svg" alt="Notification" class="tmpwidth">
+                <img src="./images/pics/morgan/morgan-avatar-xs.png" alt="Morgan profile pic" class="tmpwidth">
+            </div>
+        </div>
+
+        <div id="header-overlay">
+            <div class="col-1">
+                <input type="search" name="search-project" id="search-project" placeholder="Search projects">
+                <img src="./images/svg/search.svg" alt="Search" class="tmpwidth">
+            </div>
+        </div>
+    </div>
+
+
+    <div id="nav">
+        <div id="nav-welcome">
+            <img src="./images/pics/morgan/morgan-avatar-xs.png" alt="Morgan profile pic" class="tmpwidth">
+
+            <div class="message">
+                <h5>Howdy,</h5>
+                <h2 class="username">Morgan Oakley(@morgan)</h2>
+            </div>
+        </div>
+
+        <div class="creation-box col-2">
+            <div class="dropdown-clickable">
+                <div class="add-icon">&plus;</div>
+                <div class="down-icon">&#x25BC;</div>
+            </div>
+
+            <div class="creation-selection">
+                <ul>
+                    <li>
+                        <a href="#">New</a>
+                    </li>
+                    <li>
+                        <a href="#">Upload</a>
+                    </li>
+                    <li>
+                        <a href="#">Share</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="content">
+        <div id="content-announcement">
+            <h2>Announcements</h2>
+            <ul class="list">
+                <li class="each">
+                    <h3>Site Maintenance</h3>
+                    <div class="summary">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur unde
+                        consequuntur modi incidunt iure vel suscipit quaerat! Tenetur consequuntur incidunt ab?
+                        Voluptatem excepturi laudantium ipsa, iure cumque pariatur ipsam provident?</div>
+                </li>
+                <li class="each">
+                    <h3>Community Share Day</h3>
+                    <div class="summary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo quod nihil
+                        sapiente, numquam dolor exercitationem iusto? Adipisci fugiat eos, voluptas harum tempora velit
+                        repellat debitis. Libero assumenda atque dolore? Nisi nesciunt pariatur saepe illum a earum iure
+                        velit obcaecati aperiam.</div>
+                </li>
+                <li class="each">
+                    <h3>Updated Privacy Policy</h3>
+                    <div class="summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus eum laudantium
+                        fugiat odio doloremque, quisquam esse dolorum rerum omnis nulla molestiae veritatis perferendis
+                        ducimus quibusdam eligendi in voluptatum temporibus incidunt.</div>
+                </li>
+            </ul>
+
+        </div>
+
+        <div id="content-projects">
+            <h2>Your Projects</h2>
+            <ul class="list">
+                <li class="each">
+                    <div class="project-details">
+                        <h3>Super Cool Project</h3>
+                        <div class="summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea asperiores quas
+                            deleniti dolorem voluptate sint.</div>
+                    </div>
+                    <div class="project-clickables">
+                        <img src="./images/svg/star-plus.svg" alt="Favourite" class="tmpwidth">
+                        <img src="./images/svg/eye-plus.svg" alt="Watchlist" class="tmpwidth">
+                        <img src="./images/svg/share.svg" alt="Share" class="tmpwidth">
+                    </div>
+                </li>
+                <li class="each">
+                    <div class="project-details">
+                        <h3>Less Cool Project</h3>
+                        <div class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit labore
+                            accusantium voluptas vero fuga quis ab nemo quae consectetur error.</div>
+                    </div>
+                    <div class="project-clickables">
+                        <img src="./images/svg/star-plus.svg" alt="Favourite" class="tmpwidth">
+                        <img src="./images/svg/eye-plus.svg" alt="Watchlist" class="tmpwidth">
+                        <img src="./images/svg/share.svg" alt="Share" class="tmpwidth">
+                    </div>
+                </li>
+                <li class="each">
+                    <div class="project-details">
+                        <h3>Impossible App</h3>
+                        <div class="summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, aliquam.</div>
+                    </div>
+                    <div class="project-clickables">
+                        <img src="./images/svg/star-plus.svg" alt="Favourite" class="tmpwidth">
+                        <img src="./images/svg/eye-plus.svg" alt="Watchlist" class="tmpwidth">
+                        <img src="./images/svg/share.svg" alt="Share" class="tmpwidth">
+                    </div>
+                </li>
+                <li class="each">
+                    <div class="project-details">
+                        <h3>Easy Peasy App</h3>
+                        <div class="summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus veniam
+                            nisi suscipit!</div>
+                    </div>
+                    <div class="project-clickables">
+                        <img src="./images/svg/star-plus.svg" alt="Favourite" class="tmpwidth">
+                        <img src="./images/svg/eye-plus.svg" alt="Watchlist" class="tmpwidth">
+                        <img src="./images/svg/share.svg" alt="Share" class="tmpwidth">
+                    </div>
+                </li>
+                <li class="each">
+                    <div class="project-details">
+                        <h3>Ad Blocker</h3>
+                        <div class="summary">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, perspiciatis!
+                        </div>
+                    </div>
+                    <div class="project-clickables">
+                        <img src="./images/svg/star-plus.svg" alt="Favourite" class="tmpwidth">
+                        <img src="./images/svg/eye-plus.svg" alt="Watchlist" class="tmpwidth">
+                        <img src="./images/svg/share.svg" alt="Share" class="tmpwidth">
+                    </div>
+                </li>
+                <li class="each">
+                    <div class="project-details">
+                        <h3>Money Maker</h3>
+                        <div class="summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio possimus quos
+                            vero!</div>
+                    </div>
+                    <div class="project-clickables">
+                        <img src="./images/svg/star-plus.svg" alt="Favourite" class="tmpwidth">
+                        <img src="./images/svg/eye-plus.svg" alt="Watchlist" class="tmpwidth">
+                        <img src="./images/svg/share.svg" alt="Share" class="tmpwidth">
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div id="content-trending">
+            <h2>Trending</h2>
+            <ul class="list">
+                <li class="each">
+                    <img src="./images/pics/tegan/tegan-avatar-xs.png" alt="Tegan profile pic" class="tmpwidth">
+                    <div class="user">
+                        <h4 class="tag">@tegan</h4>
+                        <div class="title">World Peace Builder</div>
+                    </div>
+                </li>
+                <li class="each">
+                    <img src="./images/pics/morgan/morgan-avatar-xs.png" alt="Morgan profile pic" class="tmpwidth">
+                    <div class="user">
+                        <h4 class="tag">@morgan</h4>
+                        <div class="title">Super Cool Project</div>
+                    </div>
+                </li>
+                <li class="each">
+                    <img src="./images/pics/kendali/kendali-avatar-xs.jpg" alt="Kendali profile pic" class="tmpwidth">
+                    <div class="user">
+                        <h4 class="tag">@kendali</h4>
+                        <div class="title">Life Changing App</div>
+                    </div>
+                </li>
+                <li class="each">
+                    <img src="./images/pics/alex/alex-avatar-xs.png" alt="Alex profile pic" class="tmpwidth">
+                    <div class="user">
+                        <h4 class="tag">@alex</h4>
+                        <div class="title">No Traffic Maker</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="sidebar">
+        <div class="brand">
+            <div class="col-1">
+                <img src="./images/svg/logo.svg" alt="Logo" class="tmpwidth">
+            </div>
+            <div class="col-2">
+                <h1>Dashboard</h1>
+            </div>
+        </div>
+
+        <ul id="sidebar-main-nav">
+            <li class="each-nav-item">
+                <div class="col-1"><img src="./images/svg/home.svg" alt="Home" class="nav-icon tmpwidth"></div>
+                <div class="col-2">
+                    <div class="nav-text">Home</div>
+                </div>
+            </li>
+            <li class="each-nav-item">
+                <div class="col-1"><img src="./images/svg/card.svg" alt="Profile" class="nav-icon tmpwidth"></div>
+                <div class="col-2">
+                    <div class="nav-text">Profile</div>
+                </div>
+            </li>
+            <li class="each-nav-item">
+                <div class="col-1"><img src="./images/svg/message.svg" alt="Messages" class="nav-icon tmpwidth"></div>
+                <div class="col-2">
+                    <div class="nav-text">Messages</div>
+                </div>
+            </li>
+            <li class="each-nav-item">
+                <div class="col-1"><img src="./images/svg/time.svg" alt="History" class="nav-icon tmpwidth"></div>
+                <div class="col-2">
+                    <div class="nav-text">History</div>
+                </div>
+            </li>
+            <li class="each-nav-item">
+                <div class="col-1"><img src="./images/svg/calendar-check.svg" alt="Tasks" class="nav-icon tmpwidth"></div>
+                <div class="col-2">
+                    <div class="nav-text">Tasks</div>
+                </div>
+            </li>
+            <li class="each-nav-item">
+                <div class="col-1"><img src="./images/svg/account-group.svg" alt="Communities" class="nav-icon tmpwidth"></div>
+                <div class="col-2">
+                    <div class="nav-text">Communities</div>
+                </div>
+            </li>
+        </ul>
+
+        <ul id="sidebar-misc-nav">
+            <li class="each-nav-item">
+                <div class="col-1"><img src="./images/svg/gear.svg" alt="Settings" class="nav-icon tmpwidth"></div>
+                <div class="col-2">
+                    <div class="nav-text">Settings</div>
+                </div>
+            </li>
+            <li class="each-nav-item">
+                <div class="col-1"><img src="./images/svg/support.svg" alt="Support" class="nav-icon tmpwidth"></div>
+                <div class="col-2">
+                    <div class="nav-text">Support</div>
+                </div>
+            </li>
+            <li class="each-nav-item">
+                <div class="col-1"><img src="./images/svg/shield-check.svg" alt="Privacy" class="nav-icon tmpwidth"></div>
+                <div class="col-2">
+                    <div class="nav-text">Privacy</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="footer">
+        <span><img src="./images/svg/logo.svg" alt="Logo" class="tmpwidth"></span><span>&copy; 2025 Best Admin Dashboard</span>
+    </div>
+
 </body>
+
 </html>
