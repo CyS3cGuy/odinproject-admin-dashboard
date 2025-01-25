@@ -2,6 +2,7 @@
 let announcements = [];
 let projects = [];
 let trendings = [];
+let users = [];
 
 function Announcement(title, summary) {
     this.title = title;
@@ -13,13 +14,27 @@ function Project(title, summary) {
     this.summary = summary;
 }
 
-function Trending(username, title, bgColor) {
+function User(username, fullName, bgColor) {
+    this.username = username;
+    this.fullName = fullName;
     this.imgPath = `./images/pics/${username.toLowerCase()}/${username.toLowerCase()}-avatar-xs.png`;
     this.altText = `${username} Profile Pic`;
     this.bgColor = bgColor;
     this.userTag = `@${username.toLowerCase()}`;
-    this.title = title;
 }
+
+function Trending(userObj, trendTitle) {
+    this.user = userObj;
+    this.trendTitle = trendTitle;
+}
+
+let tegan = new User("Tegan", "Tegan Kin", "pink");
+let morgan = new User("Morgan", "Morgan Oakley", "yellow");
+let kendali = new User("Kendali", "Kendali Lambghi", "grey");
+let alex = new User("Alex", "Alex Turner", "lightblue");
+
+users = [tegan, morgan, kendali, alex];
+let currUser = morgan; 
 
 announcements.push(new Announcement("Site Maintenance", 
     `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur unde consequuntur modi incidunt iure vel suscipit quaerat! Tenetur consequuntur incidunt ab?
@@ -63,10 +78,12 @@ projects.push(new Project("Money Maker",
     A deer stepped cautiously into the clearing, its ears twitching at the faintest sound. Overhead, the moon cast a silvery glow, illuminating the serene wilderness below.`
 ));
 
-trendings.push(new Trending("Tegan", "World Peace Builder", "pink"));
 
-trendings.push(new Trending("Morgan", "Super Cool Project", "yellow"));
 
-trendings.push(new Trending("Kendali", "Life Changing App", "grey"));
+trendings.push(new Trending(tegan, "World Peace Builder"));
 
-trendings.push(new Trending("Alex", "No Traffic Maker", "lightblue"));
+trendings.push(new Trending(morgan, "Super Cool Project"));
+
+trendings.push(new Trending(kendali, "Life Changing App"));
+
+trendings.push(new Trending(alex, "No Traffic Maker"));

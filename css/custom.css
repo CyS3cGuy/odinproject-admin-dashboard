@@ -195,7 +195,7 @@ input[type="search"] {
     justify-content: center;
 }
 
-.profile-pic {
+.profile-wrapper {
     border-radius: 50%;
     overflow: hidden;
 }
@@ -225,10 +225,6 @@ body {
         'content'
         'footer';
 
-}
-
-.morgan {
-    background-color: yellow;
 }
 
 #header {
@@ -288,7 +284,7 @@ body {
             display: flex;
             gap: 0.5rem;
 
-            .username {
+            .fullname {
                 display: none; 
             }
 
@@ -314,7 +310,7 @@ body {
         grid-template-columns: var(--header-mobile-grid-searching);
         position: relative;
 
-        .profile-pic,
+        .profile-wrapper,
         .notification-icon {
             display: none; 
         }
@@ -375,7 +371,7 @@ body {
             align-self: end;
         }
 
-        >.username {
+        >.fullname {
             align-self: start;
         }
     }
@@ -518,7 +514,7 @@ body {
             grid-template-columns: var(--header-desktop-grid-default);
             align-items: center;
 
-            .profile-pic,
+            .profile-wrapper,
             .notification-icon {
                 display: revert; 
             }
@@ -548,7 +544,7 @@ body {
             }
 
             .profile {
-                .username {
+                .fullname {
                     display: revert;
                 }
             }

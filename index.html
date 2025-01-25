@@ -29,10 +29,10 @@
                 <img src="./images/svg/notification.svg" alt="Notification" class="icon-small notification-icon icon">
 
                 <div class="profile">
-                    <div class="icon-small profile-pic icon morgan">
-                        <img src="./images/pics/morgan/morgan-avatar-xs.png" alt="Morgan profile pic">
+                    <div class="icon-small profile-wrapper icon">
+                        <img src="" alt="" class="profile-pic">
                     </div>
-                    <h3 class="username">Morgan Oakley</h3>
+                    <h3 class="fullname">Morgan Oakley</h3>
                 </div>
                 
             </div>
@@ -40,9 +40,12 @@
 
         <div id="nav">
             <div id="nav-welcome">
-                <img src="./images/pics/morgan/morgan-avatar.png" alt="Morgan profile pic" class="icon-big">
+                <div class="profile-wrapper icon-big icon">
+                    <img src="" alt="" class="profile-pic">
+                </div>
+                
                 <h5 class="hello">Howdy,</h5>
-                <h2 class="username">Morgan Oakley(@morgan)</h2>
+                <h2><span class="fullname">Morgan Oakley</span>  (<span class="user-tag">@morgan</span>)</h2>
             </div>
 
             <div id="nav-creation-box">
@@ -204,8 +207,10 @@
         
     </div>
 
-    <script src="./js/database.js"></script>
     <script src="./js/ftellipsis.min.js"></script>
+    <script src="./js/database.js"></script>
+    <script src="./js/dom.js"></script>
+    <script src="./js/set-user.js"></script>
     <script src="./js/search.js"></script>
     <script src="./js/custom.js"></script> 
 </body>

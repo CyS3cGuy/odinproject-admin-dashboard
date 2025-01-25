@@ -1,7 +1,3 @@
-const header = document.querySelector("#header");
-const searchBox = document.querySelector('#header input[type="search"]');
-const searchIcon = document.querySelector('#header .search-icon');
-
 let lastElementClicked = null;
 
 document.addEventListener("mousedown", e => {
