@@ -36,6 +36,12 @@ ul {
     list-style: none;
 }
 
+input {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
 :root {
     font-size: 62.5%;
 }

@@ -48,6 +48,7 @@
 
     /** Color **/
     --light-gray: hsl(0, 6%, 86%);
+    --lighter-gray: hsl(0, 0%, 95%);
     --pure-white: white;
     --morgan-pic-bg: yellow;
 
@@ -235,7 +236,8 @@ body {
     border-bottom: 1px solid var(--light-gray);
     position: sticky;
     top: 0;
-    background-color: var(--pure-white); 
+    background-color: var(--pure-white);
+    transition: 200ms;
 
     grid-area: header;
 
@@ -244,7 +246,7 @@ body {
         display: grid;
         grid-template-columns: var(--header-mobile-grid-default);
         align-items: center;
-
+        height: 100%;  
 
 
         .menu-icon {
@@ -266,17 +268,19 @@ body {
         }
 
         .search {
+            display: flex;
+
             input {
-                width: 100%;
-                border-radius: 10px; 
-                background-color: var(--light-gray); 
-                padding: 0.3rem 1rem;   
-                display: none;
+                display: none; 
+                border: 1px solid var(--light-gray);
+                border-radius: 3px;
+                padding: 0.7rem; 
+                width: 100%; 
             }
 
             input:focus {
                 outline: none;
-                border: 2px solid black;  
+                box-shadow: inset 0px 0px 10px -4px gray;
             }
         }
 
@@ -284,14 +288,12 @@ body {
             display: flex;
             gap: 0.5rem;
 
-            
-    
             .username {
-                display: none;
+                display: none; 
             }
-    
+
         }
-        
+
         .icon {
             padding: 0.3rem;
             opacity: 1;
@@ -314,11 +316,11 @@ body {
 
         .profile-pic,
         .notification-icon {
-            display: none;
+            display: none; 
         }
 
         .menu-icon {
-            order: 1;
+            order: 0;
             height: 100%;
 
             .hamburger {
@@ -333,66 +335,21 @@ body {
         }
 
         .brand {
-            order: 0;
+            order: -1;
             justify-self: start;
         }
 
         .search {
-            order: 2;
-            padding-left: 0.1rem;
-            background-color: var(--background-800);
+            padding-left: 0.5rem;
+            background-color: var(--lighter-gray);
+            border-radius: 3px;
 
-            display: flex;
-
-            .search-icon {
-
-
-                & img {
-                    filter: var(--svg-text-50);
-                }
-
-                input {
-                    display: revert;
-                }
+            & input {
+                display: revert;
             }
 
-            
         }
     }
-
-
-
-
-    /* .menu-icon {
-        order: 0;
-        position: relative;
-
-        & span {
-            position: absolute;
-        }
-
-        .hamburger {
-            visibility: hidden;
-        }
-    } */
-
-    /* .brand {
-        order: 0;
-        display: flex;
-        justify-self: center;
-    }
-
-    .search {
-        position: absolute;
-        width: 100%;
-        top: 100%;
-        display: flex;
-
-        input {
-            width: 100%;
-        }
-    } */
-
 }
 
 
@@ -552,7 +509,7 @@ body {
 
 
     #header,
-    #header.searching {
+    #header.searching  {
         border-bottom: none;
         position: sticky;
 
@@ -560,27 +517,45 @@ body {
 
             grid-template-columns: var(--header-desktop-grid-default);
             align-items: center;
-        }
 
-        .menu-icon,
-        .brand {
-            display: none;
-        }
-
-        .search {
-            & input {
-                width: 80%;
-                display: revert;
-                order: 1;
-            }
-        }
-
-        .profile {
-            .username {
+            .profile-pic,
+            .notification-icon {
                 display: revert; 
             }
+
+            .menu-icon,
+            .brand {
+                display: none;
+            }
+
+            .search {
+                order: -1;
+                padding-left: 0.1rem;
+                background-color: white;
+
+                & input {
+                    display: revert;
+                    width: 80%;
+                    order: 1;
+                }
+
+                .search-icon {
+
+                    & img {
+                        filter: none;
+                    }
+                }
+            }
+
+            .profile {
+                .username {
+                    display: revert;
+                }
+            }
         }
-        
+
+
+
     }
 
     #sidebar {
