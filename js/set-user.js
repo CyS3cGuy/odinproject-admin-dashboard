@@ -7,4 +7,6 @@ document.querySelectorAll(".profile-pic").forEach(element => {
 
 document.querySelectorAll(".fullname").forEach(element => element.textContent = currUser.fullName);
 
+document.querySelectorAll(".username").forEach(element => element.textContent = currUser.username);
+
 document.querySelectorAll(".user-tag").forEach(element => element.textContent = currUser.userTag);

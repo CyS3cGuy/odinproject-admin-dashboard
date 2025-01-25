@@ -28,12 +28,12 @@ a {
 
 span {
     display: inline-block;
-} */
+} 
 
 ul {
     padding: 0;
     margin: 0;
-    list-style: none;
+    list-style: none; 
 }
 
 input {
