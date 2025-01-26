@@ -229,6 +229,8 @@ input[type="search"] {
     overflow: hidden;
 }
 
+
+
 /** Universal Styling **/
 
 body {
@@ -470,43 +472,42 @@ body {
 #content {
     grid-area: content;
 
-
     #content-announcement {
 
+        background-color: var(--static7);       
 
-        .list {
-            display: flex;
-            overflow-x: scroll;
-            overflow-y: hidden;
-            scrollbar-width: none;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
+        .announcement-heading {
+            padding: var(--inner-container-padding);
+        }
+
+        .announcement-list {
+            background-color: var(--static13);     
 
             .each {
-                height: 15rem;
-                flex: 0 0 100%;
-                justify-content: center;
-                scroll-snap-align: center;
+                padding: var(--inner-container-padding);
+                margin-bottom: 0.2rem;
+                cursor: pointer;
+                border-bottom: 1px solid var(--light-gray);
+                transition: var(--transition-fast);
 
-                display: flex;
 
-                .left-nav,
-                .right-nav {
-                    width: 15%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                display: grid;
+                grid-template-columns: 25% auto;
+                align-items: center;
+
+                .date {
+                    color: var(--text-700);
+                    font-weight: var(--font-weight-heading);
                 }
 
-                .slide {
-                    width: 70%;
-
-                    .summary {
-                        height: 100px;
-                    }
+                .summary {
+                    display: none;
                 }
 
+            }
 
+            .each:hover {
+                border-left: 10px solid var(--background-700);
             }
         }
     }
@@ -621,7 +622,7 @@ body {
 
             #nav-creation-box {
                 background-color: transparent;
-                height: 100%; 
+                height: 100%;
 
                 .add-icon,
                 .down-icon {
@@ -630,22 +631,22 @@ body {
 
                 .creation-selection {
                     transform: none;
-                    position: relative;  
-                    top: auto; 
+                    position: relative;
+                    top: auto;
                     text-align: center;
 
                     ul {
 
                         display: grid;
                         grid-template-columns: repeat(3, 1fr);
-                        gap: 1rem;    
+                        gap: 1rem;
 
                         li {
                             border: 1px solid var(--light-gray);
                             background-color: var(--secondary);
                             transition: var(--transition-fast);
-                            padding: 0.5rem; 
-                            border-radius: 1.5rem;   
+                            padding: 0.5rem;
+                            border-radius: 1.5rem;
                         }
                     }
                 }
@@ -658,6 +659,48 @@ body {
                     transform: none;
                 }
             }
+        }
+    }
+
+    #content {
+        .inner-container {
+            display: grid; 
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 
+            'content-projects content-announcement'
+            'content-projects content-trending';
+            gap: 2rem;   
+
+        }
+        #content-announcement {
+
+            grid-area: content-announcement;
+
+            .announcement-list {
+
+                .each {
+                    display: block;
+
+                    .summary {
+                        display: revert; 
+                        height: 7rem;  
+                    }
+
+                }
+
+                .each:hover {
+                    border-left: 10px solid var(--background-700);
+                }
+            }
+        }
+
+        #content-projects {
+            grid-area: content-projects;
+        }
+
+        #content-trending {
+            grid-area: content-trendings;
         }
     }
 

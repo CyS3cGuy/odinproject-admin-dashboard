@@ -6,25 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/modern-normalize.css">
     <link rel="stylesheet" href="./css/custom-reset.css">
-    <link rel="stylesheet" href="./css/custom.css"> 
+    <link rel="stylesheet" href="./css/accordian.css">
+    <link rel="stylesheet" href="./css/custom.css">
     <title>Admin Dashboard</title>
 </head>
 
 <body>
     <div id="main-container">
-        <div id="header" class="">  
-            <div class="inner-container"> 
-                <div class="menu-icon flex-align-center"><span class="hamburger icon">&#x2630;</span><span class="cancel icon">&lsaquo;</span></div>  
+        <div id="header" class="">
+            <div class="inner-container">
+                <div class="menu-icon flex-align-center"><span class="hamburger icon">&#x2630;</span><span
+                        class="cancel icon">&lsaquo;</span></div>
                 <div class="brand flex-align-center">
                     <img src="./images/svg/logo.svg" alt="Logo" class="icon-small">
-                    <h1 class="title">DaBoard</h1>  
+                    <h1 class="title">DaBoard</h1>
                 </div>
                 <div class="search flex-align-center">
-                    <input type="search" name="search-project" id="search-project-main" placeholder="Search projects..."> 
+                    <input type="search" name="search-project" id="search-project-main"
+                        placeholder="Search projects...">
                     <div class="search-icon icon">
                         <img src="./images/svg/search.svg" alt="Search" class="icon-small" id="header-search-icon">
                     </div>
-                    
+
                 </div>
                 <img src="./images/svg/notification.svg" alt="Notification" class="icon-small notification-icon icon">
 
@@ -34,7 +37,7 @@
                     </div>
                     <h3 class="fullname">y</h3>
                 </div>
-                
+
             </div>
         </div>
 
@@ -44,9 +47,9 @@
                     <div class="profile-wrapper icon-big icon">
                         <img src="" alt="" class="profile-pic">
                     </div>
-                
+
                     <h5 class="hello">Howdy,</h5>
-                    <h2 class="username"></h2> 
+                    <h2 class="username"></h2>
                 </div>
                 <div id="nav-creation-box">
                     <div class="add-icon">&plus;</div>
@@ -70,55 +73,59 @@
         </div>
 
         <div id="content">
-            <div id="content-announcement">
-                <h2>Announcements</h2>
-                <ul class="list">
-                    <li class="each">
-                        <div class="left-nav"><a href="#announcement-3">&#x25C0;</a></div>
-                        <div id="announcement-1" class="slide">
-                            <h3>Placeholder Title</h3>
-                            <div class="summary">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur eaque doloremque ipsam exercitationem rem nisi tenetur dicta nostrum labore ipsa?
-                                </p>
+            <div class="inner-container">
+                <div id="content-announcement">
+                    <div class="accordian">
+                        <div class="accordian-heading announcement-heading">
+                            <div class="accordian-cb">
+                                <input type="checkbox" name="announcements-accordian" id="accordian-title-1">
                             </div>
+                            <label for="accordian-title-1">
+                                <div class="accordian-indicator">
+                                    <span class="straight-line">
+                                        <hr>
+                                    </span>
+                                    <span class="straight-line">
+                                        <hr>
+                                    </span>
+                                </div>
+                                <h2 class="title">Announcements</h2>
+                            </label>
                         </div>
-                        <div class="right-nav"><a href="#announcement-2">&#x25B6;</a></div>
-                    </li>
-                </ul>
-
-            </div>
-
-            <div id="content-projects">
-                <h2>Your Projects</h2>
-                <ul class="list">
-                    <li class="each">
-                        <div class="project-details">
-                            <h3>Money Maker</h3>
-                            <div class="summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio possimus
-                                quos
-                                vero!</div>
-                        </div>
-                        <div class="project-clickables">
-                            <img src="./images/svg/star-plus.svg" alt="Favourite" class="icon-small">
-                            <img src="./images/svg/eye-plus.svg" alt="Watchlist" class="icon-small">
-                            <img src="./images/svg/share.svg" alt="Share" class="icon-small">
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div id="content-trending">
-                <h2>Trending</h2>
-                <ul class="list">
-                    <li class="each">
-                        <img src="./images/pics/tegan/tegan-avatar-xs.png" alt="Tegan profile pic" class="icon-small">
-                        <div class="user">
-                            <h4 class="tag">@tegan</h4>
-                            <div class="title">World Peace Builder</div>
-                        </div>
-                    </li>
-                </ul>
+                        <ul class="accordian-list announcement-list"> 
+                        </ul>
+                    </div>
+                </div>
+                <div id="content-projects">
+                    <h2>Your Projects</h2>
+                    <ul class="list">
+                        <li class="each">
+                            <div class="project-details">
+                                <h3>Money Maker</h3>
+                                <div class="summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio possimus
+                                    quos
+                                    vero!</div>
+                            </div>
+                            <div class="project-clickables">
+                                <img src="./images/svg/star-plus.svg" alt="Favourite" class="icon-small">
+                                <img src="./images/svg/eye-plus.svg" alt="Watchlist" class="icon-small">
+                                <img src="./images/svg/share.svg" alt="Share" class="icon-small">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="content-trending">
+                    <h2>Trending</h2>
+                    <ul class="list">
+                        <li class="each">
+                            <img src="./images/pics/tegan/tegan-avatar-xs.png" alt="Tegan profile pic" class="icon-small">
+                            <div class="user">
+                                <h4 class="tag">@tegan</h4>
+                                <div class="title">World Peace Builder</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -205,7 +212,7 @@
                 Dashboard</span>
         </div>
 
-        
+
     </div>
 
     <script src="./js/ftellipsis.min.js"></script>

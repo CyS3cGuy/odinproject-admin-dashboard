@@ -1,0 +1,109 @@
+.accordian {
+    --indicator-weight-normal: 0.3rem;
+    --indicator-weight-bold: 0.5rem;
+    --indicator-weight-bolder: 0.7rem;
+    --max-drop-height: 100rem;
+
+    .straight-line {
+        & hr {
+            background-color: black;
+            border: none;
+            border-radius: 5px;
+            width: var(--font-size-h3);
+            height: var(--indicator-weight-bold);
+        }
+    }
+
+    .accordian-cb {
+        & input[type="checkbox"] {
+            display: none;
+        }
+    }
+
+    .accordian-cb:has(input[type="checkbox"])+label[for*="accordian-title-"] .accordian-indicator {
+        & span:nth-of-type(1) {
+            transition: var(--transition-fast);
+            transform: translateY(-50%) rotateZ(0deg);
+        }
+
+        & span:nth-of-type(2) {
+            transition: var(--transition-fast);
+            transform: translateY(-50%) rotateZ(90deg);
+        }
+
+    }
+
+    .accordian-cb:has(input[type="checkbox"]:checked)+label[for*="accordian-title-"] .accordian-indicator {
+        & span:nth-of-type(1) {
+            transform: translateY(-50%) rotateZ(45deg);
+        }
+
+        & span:nth-of-type(2) {
+            transform: translateY(-50%) rotateZ(-45deg);
+        }
+    }
+
+    .accordian-heading {
+        & label[for*="accordian-title-"] {
+            display: flex;
+            gap: 1.5rem;
+        }
+    }
+
+    /** To determine the shape of indicator **/
+    .accordian-indicator {
+        position: relative;
+        width: var(--font-size-h3);
+
+        & span {
+            position: absolute;
+            top: 50%;
+        }
+    }
+
+    .accordian-list {
+        position: relative;
+
+        overflow: hidden;
+    }
+
+    .accordian-heading:has(input[type="checkbox"])+.accordian-list {
+        max-height: 0;
+        transition: var(--transition-average);
+    }
+
+    .accordian-heading:has(input[type="checkbox"]:checked)+.accordian-list {
+        max-height: var(--max-drop-height);
+    }
+}
+
+/** Reset Accordian **/
+@media only screen and (min-width: 50rem) {
+    .accordian {
+        .straight-line {
+            display: none;
+        }
+
+        .accordian-cb,
+        .accordian-indicator {
+            display: none;
+        }
+
+        .accordian-heading {
+            & label[for*="accordian-title-"] {
+                display: flex;
+                gap: 1.5rem;
+            }
+        } 
+
+        .accordian-list {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .accordian-heading:has(input[type="checkbox"])+.accordian-list,
+        .accordian-heading:has(input[type="checkbox"]:checked)+.accordian-list {
+            max-height: revert; 
+        }
+    }
+}

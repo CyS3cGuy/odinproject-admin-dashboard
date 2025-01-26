@@ -4,9 +4,11 @@ let projects = [];
 let trendings = [];
 let users = [];
 
-function Announcement(title, summary) {
+function Announcement(date, title, summary) {
+    this.date = date;
     this.title = title;
     this.summary = summary;
+    
 }
 
 function Project(title, summary) {
@@ -36,17 +38,17 @@ let alex = new User("Alex", "Alex Turner", "lightblue");
 users = [tegan, morgan, kendali, alex];
 let currUser = morgan; 
 
-announcements.push(new Announcement("Site Maintenance", 
+announcements.push(new Announcement("03 Feb 2024", "Site Maintenance", 
     `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur unde consequuntur modi incidunt iure vel suscipit quaerat! Tenetur consequuntur incidunt ab?
 
     Voluptatem excepturi laudantium ipsa, iure cumque pariatur ipsam provident?`
 ));
 
-announcements.push(new Announcement("Community Share Day", 
+announcements.push(new Announcement("27 Aug 2024", "Community Share Day", 
     `The warm glow of the evening sun bathed the quiet village in hues of orange and gold. A gentle breeze carried the scent of blooming jasmine, weaving through the narrow cobblestone streets. Children's laughter echoed faintly from a distant meadow, blending harmoniously with the chirping of crickets. Overhead, a lone sparrow darted across the sky, disappearing into the silhouette of the mountains beyond.`
 ));
 
-announcements.push(new Announcement("Updated Privacy Policy", 
+announcements.push(new Announcement("02 Jan 2025", "Updated Privacy Policy", 
     `The sound of waves crashing against the shore filled the air as the sun dipped below the horizon. A lone fisherman stood at the edge of the pier, his silhouette framed by the fading light. Overhead, seagulls circled, their calls blending with the rhythm of the ocean.`
 ));
 
