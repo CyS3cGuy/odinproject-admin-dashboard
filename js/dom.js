@@ -5,3 +5,4 @@ const searchIcon = header.querySelector('.search-icon');
 
 // Content
 const announcementList = document.querySelector("#content-announcement .announcement-list");
+const projectList = document.querySelector("#content-projects .projects-list");

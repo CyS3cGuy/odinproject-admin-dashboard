@@ -8,7 +8,7 @@ function Announcement(date, title, summary) {
     this.date = date;
     this.title = title;
     this.summary = summary;
-    
+    this.ellipsisVar = null;
 }
 
 function Project(title, summary) {
