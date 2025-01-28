@@ -18,28 +18,52 @@ searchBox.addEventListener("blur", e => {
 
 searchBox.addEventListener("keydown", event => {
     if (event.key === "Enter") {
+
+
         // Start Search
         let query = searchBox.value;
         let searched = searchProjects(query);
 
-        // To be replaced
-        console.log(searched);
+        removeAllChildren(projectList);
+
+        searched.forEach(eachSearch => {
+            createProject(eachSearch.title, eachSearch.summary);
+        })
+
+        // Set ellipsis for projects
+        projectList.querySelectorAll(".each .summary").forEach(item => {
+            let ellipsis = new Ellipsis(item);
+            ellipsis.calc();
+            ellipsis.set();
+        })
     }
 })
 
 searchIcon.addEventListener("click", () => {
     if (header.classList.contains("searching")) {
+
         // Start search
         let query = searchBox.value;
         let searched = searchProjects(query);
 
-        // To be replaced
-        console.log(searched);
+        removeAllChildren(projectList);
+
+        searched.forEach(eachSearch => {
+            createProject(eachSearch.title, eachSearch.summary);
+        })
+
+        // Set ellipsis for projects
+        projectList.querySelectorAll(".each .summary").forEach(item => {
+            let ellipsis = new Ellipsis(item);
+            ellipsis.calc();
+            ellipsis.set();
+        })
+
     } else {
-        header.classList.add("searching"); 
-        searchBox.focus(); 
+        header.classList.add("searching");
+        searchBox.focus();
     }
-    
+
 })
 
 

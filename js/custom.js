@@ -248,3 +248,9 @@ function createTrending(title, user, ind) {
     each.style.left = "0px";
     each.setAttribute("order", ind);
 }
+
+function removeAllChildren(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
