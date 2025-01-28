@@ -3,6 +3,11 @@ let announcements = [];
 let projects = [];
 let trendings = [];
 let users = [];
+let metadata = {
+    trendingIntervalID: null,
+    trendingAnimationSpeed: 20,  // Control speed here. Lesser number means higher speed       
+    trendingAnimationMotion: 1,  // Ensure smoothness, increase by 1px for every interval    
+}
 
 function Announcement(date, title, summary) {
     this.date = date;

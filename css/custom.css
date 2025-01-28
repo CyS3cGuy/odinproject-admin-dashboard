@@ -578,7 +578,45 @@ body {
     }
 
     #content-trending {
-        display: none;
+        background-color: var(--static7);
+        padding: var(--even-inner-container-padding);   
+
+        .trending-list {
+            display: flex;
+            gap: 2.4rem;  
+            overflow: hidden;  
+            position: relative;  
+
+            .each {
+                width: 40%;    
+                flex: 0 0 40%;      
+                position: relative;  
+
+                padding: var(--inner-container-padding); 
+                background-color: var(--static13);
+                border-radius: 10px; 
+                opacity: 1;
+                transform: scale(1); 
+                cursor: pointer;   
+                transition: transform var(--transition-fast), opacity var(--transition-fast);   
+                
+
+                display: flex; 
+                align-items: center; 
+                gap: 1.5rem; 
+            
+                .profile-wrapper {
+                    height: calc(var(--font-size-h4) + var(--font-size-standard) + 1rem);  
+                    width: calc(var(--font-size-h4) + var(--font-size-standard) + 1rem);  
+                }
+             }
+
+             .each:hover {
+                transform: scale(1.05);
+                opacity: 0.7;     
+             }
+        }
+         
     }
 }
 
@@ -737,7 +775,16 @@ body {
         }
 
         #content-trending {
-            grid-area: content-trendings;
+            grid-area: content-trending;
+            
+            .trending-list {
+                display: grid;
+                grid-auto-rows: auto; 
+ 
+                .each {
+                    width: 100%; 
+                }
+            }
         }
     }
 

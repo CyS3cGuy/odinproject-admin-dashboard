@@ -32,6 +32,85 @@ projectList.querySelectorAll(".each .summary").forEach(item => {
     ellipsis.set();
 })
 
+// Create trending items
+trendings.forEach((trending, ind) => {
+    createTrending(trending.trendTitle, trending.user, ind);
+})
+
+// Animate the trending items 
+animateTrendingItems(); // Start animate logic when content load
+window.addEventListener("resize", () => animateTrendingItems()); // Recheck animate logic whenever resize 
+
+// Animate trending items
+
+function animateTrendingItems() {
+    const trendingItemWidth = trendingList.querySelector(".each").offsetWidth;
+
+    if (breakpoint.matches) {
+        // Logic for desktop - disable the animation, reset position
+        if (metadata.trendingIntervalID !== null ){
+            clearInterval(metadata.trendingIntervalID);
+            resetTrendingItems(); 
+            metadata.trendingIntervalID = null;
+        }
+    } else {
+        // Logic for mobile - enable the animation
+        if (metadata.trendingIntervalID === null) {
+            metadata.trendingIntervalID = setInterval(moveTrendingItems, metadata.trendingAnimationSpeed); 
+        }
+       
+    }
+
+    function resetTrendingItems() {
+        // Reset the left styling
+        trendingList.querySelectorAll(".each").forEach(each => {
+            each.style.left = "0px";
+        });   
+
+        // Reset the sorting
+        Array.from(trendingList.querySelectorAll(".each")).sort((prev, next) => {
+            let prevOrder = +prev.getAttribute("order");
+            let nextOrder = +next.getAttribute("order");
+
+            if (prevOrder < nextOrder){
+                trendingList.insertBefore(prev, next);
+                return -1;
+            } else {
+                trendingList.insertBefore(next, prev);
+                return 1; 
+            }
+        })
+    }
+
+    function moveTrendingItems() {
+        let snapPoint = 0;  
+        
+        trendingList.querySelectorAll(".each").forEach((each, ind) => {
+
+            let newLeft = Math.abs(+each.style.left.replace("px", "")) + metadata.trendingAnimationMotion;  
+
+            // Get the width + gap of the first element. this will be the snap point that tells the first element to place itself at the back of the ul.
+            if (ind === 0) {
+                snapPoint = (+window.getComputedStyle(each).width.replace("px", "") + +window.getComputedStyle(each.parentElement).columnGap.replace("px", ""));   
+            }
+
+            if (newLeft <= snapPoint) {
+                // Move the item to the left
+                each.style.left = (-newLeft).toString() + "px"; 
+            } else {
+                // When reach snap point
+                each.style.left = (-(Math.abs(+each.style.left.replace("px", "")) - snapPoint)).toString() + "px";
+                // Move the first list item to the back for repeating animation
+                if (ind === 0) {
+                    trendingList.insertBefore(each, null);
+                }   
+            }
+             
+        });
+    }
+}
+
+
 // Announcement DOM
 function createAnnouncement(date, title, summary) {
     const each = document.createElement("li");
@@ -65,7 +144,7 @@ function setEllipsis(item, ind) {
         announcements[ind].ellipsisVar.calc();
         announcements[ind].ellipsisVar.set();
     } else {
-        if (announcements[ind].ellipsisVar !== null ){
+        if (announcements[ind].ellipsisVar !== null) {
             announcements[ind].ellipsisVar.destroy();
         }
     }
@@ -128,4 +207,44 @@ function createProject(title, summary) {
     each.appendChild(projectClickableDiv);
 
     projectList.appendChild(each);
+}
+
+
+// Trending DOM 
+
+function createTrending(title, user, ind) {
+    const each = document.createElement("li");
+    each.classList.add("each");
+
+    const profileWrapperDiv = document.createElement("div");
+    profileWrapperDiv.classList.add("profile-wrapper");
+    profileWrapperDiv.style.backgroundColor = user.bgColor;
+
+
+    const profilePic = document.createElement("img");
+    profilePic.src = user.imgPath;
+    profilePic.altText = user.altText;
+
+    profileWrapperDiv.appendChild(profilePic);
+
+    const userDiv = document.createElement("div");
+    userDiv.classList.add("user");
+
+    const tagh4 = document.createElement("h4");
+    tagh4.classList.add("tag");
+    tagh4.textContent = user.userTag;
+
+    const trendingTitleDiv = document.createElement("div");
+    trendingTitleDiv.classList.add("title");
+    trendingTitleDiv.textContent = title;
+
+    userDiv.appendChild(tagh4);
+    userDiv.appendChild(trendingTitleDiv);
+
+    each.appendChild(profileWrapperDiv);
+    each.appendChild(userDiv);
+
+    trendingList.appendChild(each); 
+    each.style.left = "0px";
+    each.setAttribute("order", ind);
 }
