@@ -253,10 +253,11 @@ body {
 
 #main-container {
     position: relative;
+    min-height: 100vh;   
 
     display: grid;
-    grid-template-rows: repeat(5, auto);
-    grid-template:
+    grid-auto-rows: auto; 
+    grid-template-areas:  
         'header'
         'header-search'
         'nav'
@@ -596,16 +597,17 @@ body {
     #content-trending {
         background-color: var(--static7);
         padding: var(--even-inner-container-padding);
+        overflow: hidden;
+        width: 100%;     
 
         .trending-list {
             display: flex;
+            flex-wrap: nowrap; 
             gap: 2.4rem;
-            overflow: hidden;
             position: relative;
 
             .each {
-                width: 40%;
-                flex: 0 0 40%;
+                flex: 0 0 max(40%, 25rem);     
                 position: relative;
 
                 padding: var(--inner-container-padding);
@@ -645,8 +647,16 @@ body {
     justify-content: center;
     align-items: center; 
     padding: 1rem;  
-    margin-top: 2rem; 
-    gap: 1rem;     
+    margin-top: 2rem;   
+
+    & span {
+        text-align: center; 
+
+        .icon-small {
+            width: calc(var(--icon-size-standard) + 2rem);
+            height: calc(var(--icon-size-standard) + 2rem); 
+        }
+    }
 }
 
 #sidebar {
@@ -737,7 +747,7 @@ body {
 @media only screen and (min-width: 70rem) {
     #main-container {
         position: relative;
-        min-height: 100vh;       
+             
 
         display: grid;
         grid-template-rows: auto auto 1fr auto; 

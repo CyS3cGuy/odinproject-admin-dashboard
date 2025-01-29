@@ -6,29 +6,208 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/modern-normalize.css">
     <link rel="stylesheet" href="./css/custom-reset.css">
-    <link rel="stylesheet" href="./css/debug.css">
+    <link rel="stylesheet" href="./css/custom.css">
+    <link rel="stylesheet" href="./css/accordian.css">
     <title>Admin Dashboard</title>
 </head>
 
 <body>
     <div id="main-container">
-        <div id="header">
+        <div id="header" class="">
             <div class="inner-container">
-                <div class="menu-icon"><span class="hamburger">&#x2630;</span><span class="cancel">&#x274c;</span></div>
-                <!-- <div class="brand flex-align-center">
+                <div class="menu-icon flex-align-center"><span class="hamburger icon">&#x2630;</span><span
+                        class="cancel icon">&lsaquo;</span></div>
+                <div class="brand flex-align-center">
                     <img src="./images/svg/logo.svg" alt="Logo" class="icon-small">
-                    <h1 class="title">DaBoard</h1>  
+                    <h1 class="title">DaBoard</h1>
                 </div>
                 <div class="search flex-align-center">
-                    <img src="./images/svg/search.svg" alt="Search" class="icon-small search-icon">
-                    <input type="search" name="search-project" id="search-project-main">
+                    <input type="search" name="search-project" id="search-project-main"
+                        placeholder="Search projects...">
+                    <div class="search-icon icon">
+                        <img src="./images/svg/search.svg" alt="Search" class="icon-small" id="header-search-icon">
+                    </div>
+
                 </div>
-                <img src="./images/svg/notification.svg" alt="Notification" class="icon-small notification-icon">
-                <img src="./images/pics/morgan/morgan-avatar-xs.png" alt="Morgan profile pic"
-                    class="icon-small profile-pic"> -->
-            </div> 
+                <img src="./images/svg/notification.svg" alt="Notification" class="icon-small notification-icon icon">
+
+                <div class="profile">
+                    <div class="icon-minorbig curr-user profile-wrapper icon">
+                        <img src="" alt="" class="profile-pic">
+                    </div>
+                    <h3 class="fullname">y</h3>
+                </div>
+
+            </div>
         </div>
+
+        <div id="nav">
+            <div class="inner-container">
+                <div id="nav-welcome">
+                    <div class="profile-wrapper curr-user icon-big icon">
+                        <img src="" alt="" class="profile-pic">
+                    </div>
+
+                    <h5 class="hello">Howdy,</h5>
+                    <h2 class="username"></h2>
+                </div>
+                <div id="nav-creation-box">
+                    <div class="add-icon">&plus;</div>
+                    <div class="down-icon">&#x25BC;</div>
+                    <div class="creation-selection">
+                        <ul>
+                            <li>
+                                <a href="#">New</a>
+                            </li>
+                            <li>
+                                <a href="#">Upload</a>
+                            </li>
+                            <li>
+                                <a href="#">Share</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="content">
+            <div class="inner-container">
+                <div id="content-announcement">
+                    <div class="accordian">
+                        <div class="accordian-heading announcement-heading">
+                            <div class="accordian-cb">
+                                <input type="checkbox" name="announcements-accordian" id="accordian-title-1">
+                            </div>
+                            <label for="accordian-title-1">
+                                <div class="accordian-indicator">
+                                    <span class="straight-line">
+                                        <hr>
+                                    </span>
+                                    <span class="straight-line">
+                                        <hr>
+                                    </span>
+                                </div>
+                                <h2 class="title">Announcements</h2>
+                            </label>
+                        </div>
+                        <ul class="accordian-list announcement-list"> 
+                        </ul>
+                    </div>
+                </div>
+                <div id="content-projects">
+                    <h2 class="projects-heading">Your Projects</h2>
+                    <ul class="projects-list list">
+                    </ul>
+                </div>
+                <div id="content-trending">
+                    <h2>Trending</h2>
+                    <ul class="trending-list list">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="sidebar" class="mobile-hide"> 
+            <div class="inner-container">
+                <div class="back make-grid">
+                    <div class="col-1"></div> 
+                    <div class="col-2">
+                        &lt;&lt; Back   
+                    </div>
+                </div>
+                <div class="brand make-grid">
+                    <div class="col-1">
+                        <img src="./images/svg/logo.svg" alt="Logo" class="icon-small">
+                    </div>
+                    <div class="col-2">
+                        <h1>DaBoard</h1>
+                    </div>
+                </div>
+                <ul id="sidebar-main-nav">
+                    <li class="each-nav-item make-grid">
+                        <div class="col-1"><img src="./images/svg/home.svg" alt="Home" class="nav-icon icon-small"></div>
+                        <div class="col-2">
+                            <div class="nav-text">Home</div>
+                        </div>
+                    </li>
+                    <li class="each-nav-item make-grid">
+                        <div class="col-1"><img src="./images/svg/card.svg" alt="Profile" class="nav-icon icon-small"></div>
+                        <div class="col-2">
+                            <div class="nav-text">Profile</div>
+                        </div>
+                    </li>
+                    <li class="each-nav-item make-grid">
+                        <div class="col-1"><img src="./images/svg/message.svg" alt="Messages" class="nav-icon icon-small">
+                        </div>
+                        <div class="col-2">
+                            <div class="nav-text">Messages</div>
+                        </div>
+                    </li>
+                    <li class="each-nav-item make-grid">
+                        <div class="col-1"><img src="./images/svg/time.svg" alt="History" class="nav-icon icon-small"></div>
+                        <div class="col-2">
+                            <div class="nav-text">History</div>
+                        </div>
+                    </li>
+                    <li class="each-nav-item make-grid">
+                        <div class="col-1"><img src="./images/svg/calendar-check.svg" alt="Tasks"
+                                class="nav-icon icon-small">
+                        </div>
+                        <div class="col-2">
+                            <div class="nav-text">Tasks</div>
+                        </div>
+                    </li>
+                    <li class="each-nav-item make-grid">
+                        <div class="col-1"><img src="./images/svg/account-group.svg" alt="Communities"
+                                class="nav-icon icon-small"></div>
+                        <div class="col-2">
+                            <div class="nav-text">Communities</div>
+                        </div>
+                    </li>
+                </ul>
+                <ul id="sidebar-misc-nav">
+                    <li class="each-nav-item make-grid">
+                        <div class="col-1"><img src="./images/svg/gear.svg" alt="Settings" class="nav-icon icon-small">
+                        </div>
+                        <div class="col-2">
+                            <div class="nav-text">Settings</div>
+                        </div>
+                    </li>
+                    <li class="each-nav-item make-grid">
+                        <div class="col-1"><img src="./images/svg/support.svg" alt="Support" class="nav-icon icon-small">
+                        </div>
+                        <div class="col-2">
+                            <div class="nav-text">Support</div>
+                        </div>
+                    </li>
+                    <li class="each-nav-item make-grid">
+                        <div class="col-1"><img src="./images/svg/shield-check.svg" alt="Privacy"
+                                class="nav-icon icon-small">
+                        </div>
+                        <div class="col-2">
+                            <div class="nav-text">Privacy</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="footer">
+            <span><img src="./images/svg/logo.svg" alt="Logo" class="icon-small"></span><span>&copy; 2025 Best Admin
+                Dashboard | All Rights Reserved By CyS3cGuy</span>  
+        </div>
+
+
     </div>
+
+    <script src="./js/ftellipsis.min.js"></script>
+    <script src="./js/database.js"></script>
+    <script src="./js/dom.js"></script>
+    <script src="./js/set-user.js"></script>
+    <script src="./js/custom.js"></script> 
+    <script src="./js/search.js"></script>
+    <script src="./js/sidebar.js"></script> 
 </body>
 
 </html>
