@@ -643,20 +643,21 @@ body {
 
     background-color: var(--background-200);   
     
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    padding: 1rem;  
-    margin-top: 2rem;   
-
-    & span {
-        text-align: center; 
-
-        .icon-small {
-            width: calc(var(--icon-size-standard) + 2rem);
-            height: calc(var(--icon-size-standard) + 2rem); 
+    .inner-container {
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        
+        & span {
+            text-align: center; 
+    
+            .icon-small {
+                width: calc(var(--icon-size-standard) + 2rem);
+                height: calc(var(--icon-size-standard) + 2rem); 
+            }
         }
     }
+    
 }
 
 #sidebar {
