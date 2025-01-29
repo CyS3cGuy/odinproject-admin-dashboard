@@ -7,3 +7,6 @@ const searchIcon = header.querySelector('.search-icon');
 const announcementList = document.querySelector("#content-announcement .announcement-list");
 const projectList = document.querySelector("#content-projects .projects-list");
 const trendingList = document.querySelector("#content-trending .trending-list"); 
+
+// Sidebar
+const sidebar = document.querySelector("#sidebar");  

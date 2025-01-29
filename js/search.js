@@ -35,7 +35,7 @@ searchBox.addEventListener("keydown", event => {
             let ellipsis = new Ellipsis(item);
             ellipsis.calc();
             ellipsis.set();
-        })
+        }) 
     }
 })
 
