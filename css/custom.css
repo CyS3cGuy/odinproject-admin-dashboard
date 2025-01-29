@@ -369,6 +369,7 @@ body {
         .menu-icon {
             order: 0;
             height: 100%;
+            justify-content: flex-end;  
 
             .hamburger {
                 visibility: hidden;
@@ -378,6 +379,7 @@ body {
                 font-size: calc(1rem + var(--font-size-standard));
                 visibility: visible;
                 height: 100%;
+                   
             }
         }
 
@@ -647,7 +649,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center; 
-        
+
         & span {
             text-align: center; 
     
